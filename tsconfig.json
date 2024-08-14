@@ -7,7 +7,7 @@
     "types": ["vitest/globals", "@testing-library/jest-dom"],
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -20,6 +20,22 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
+
+    /* Alias */
+    "baseUrl": "src",
+    "paths": {
+      "app/*": ["app/*"],
+      "components/*": ["components/*"],
+      "pages/*": ["pages/*"],
+      "layouts/*": ["layouts/*"],
+      "types/*": ["types/*"],
+      "hooks/*": ["hooks/*"],
+      "mocks/*": ["mocks/*"],
+      "store/*": ["store/*"],
+      "services/*": ["services/*"],
+      "const/*": ["const/*"],
+      "utils/*": ["utils/*"],
+    }
   },
   "include": ["src", "vite.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
