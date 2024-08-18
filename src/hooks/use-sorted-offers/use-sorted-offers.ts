@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
-import { OfferItemType } from 'types/offer-item';
+import { OfferItemModel } from 'types/offer-item';
 import { SortOption } from 'components/sort/const.ts';
 
-function useSortedOffers(offers: OfferItemType[], currentSort: SortOption) {
+function useSortedOffers(offers: OfferItemModel[], currentSort: SortOption) {
   return useMemo(() => {
     switch (currentSort) {
       case SortOption.PriceLowToHigh:

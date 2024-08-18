@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 import { useAppDispatch } from 'hooks/store';
-import { CityNameType } from 'types/city-name.ts';
+import { CityNameModel } from 'types/city-name.ts';
 import { offersAction } from 'store/slices/offers.ts';
 import { useMemo } from 'react';
 
 type TabProps = {
-  city: CityNameType;
-  currentCity: CityNameType;
+  city: CityNameModel;
+  currentCity: CityNameModel;
 };
 
 const Tab = ({ city, currentCity }: TabProps) => {

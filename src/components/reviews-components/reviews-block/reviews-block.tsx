@@ -1,10 +1,10 @@
 import ReviewsInfo from 'components/reviews-components/reviews-info';
 import ReviewsForm from 'components/reviews-components/reviews-form';
-import { ReviewType } from 'types/review.ts';
+import { ReviewModel } from 'types/review.ts';
 import { getSortedReviews } from 'components/reviews-components/reviews-block/functions.ts';
 
 type ReviewsBlock = {
-  reviews: ReviewType[];
+  reviews: ReviewModel[];
   activeOfferId: string;
 };
 

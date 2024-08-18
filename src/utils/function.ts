@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 
 function getCurrentDate(date: Date, isDay = true) {
   if (isDay) {
@@ -18,9 +18,9 @@ function getStarsWidth(stars: number) {
   return `${width}%`;
 }
 
-function groupOffersByCity(offers: OfferItemType[]) {
+function groupOffersByCity(offers: OfferItemModel[]) {
   return offers.reduce<{
-    [key: string]: OfferItemType[];
+    [key: string]: OfferItemModel[];
   }>((result, offer) => {
     if (offer.isFavorite) {
       const city = offer.city.name;

@@ -1,14 +1,14 @@
-import { LocationType } from './location';
-import { CityType } from './city';
+import { LocationModel } from './location';
+import { CityModel } from './city';
 
-export type OfferItemType = {
+export type OfferItemModel = {
   id: string;
   title: string;
   type: string;
   price: number;
   previewImage: string;
-  city: CityType;
-  location: LocationType;
+  city: CityModel;
+  location: LocationModel;
   isFavorite: boolean;
   isPremium: boolean;
   rating: number;

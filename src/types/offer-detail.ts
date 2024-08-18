@@ -1,21 +1,21 @@
-import { UserType } from './user.ts';
-import { CityType } from 'types/city.ts';
-import { LocationType } from 'types/location.ts';
+import { UserModel } from './user.ts';
+import { CityModel } from 'types/city.ts';
+import { LocationModel } from 'types/location.ts';
 
-export type OfferDetailType = {
+export type OfferDetailModel = {
   id: string;
   title: string;
   type: string;
   price: number;
-  city: CityType;
-  location: LocationType;
+  city: CityModel;
+  location: LocationModel;
   isFavorite: boolean;
   isPremium: boolean;
   rating: number;
   description: string;
   bedrooms: number;
   goods: string[];
-  host: UserType;
+  host: UserModel;
   images: string[];
   maxAdults: number;
 };

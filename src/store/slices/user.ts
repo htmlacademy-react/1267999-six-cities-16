@@ -1,10 +1,10 @@
-import { UserType } from 'types/user.ts';
+import { UserModel } from 'types/user.ts';
 import { AuthorizationStatus, RequestStatus } from 'const/const.ts';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { checkAuth, login, logout } from 'store/thunks/auth.ts';
 
 type UserState = {
-  info: UserType | null;
+  info: UserModel | null;
   requestStatus: RequestStatus;
   status: AuthorizationStatus;
 };
@@ -15,7 +15,7 @@ const initialState: UserState = {
   status: AuthorizationStatus.Unknown,
 };
 
-function processSuccess(state: UserState, action: PayloadAction<UserType>) {
+function processSuccess(state: UserState, action: PayloadAction<UserModel>) {
   state.info = action.payload;
   state.status = AuthorizationStatus.Auth;
   state.requestStatus = RequestStatus.Success;

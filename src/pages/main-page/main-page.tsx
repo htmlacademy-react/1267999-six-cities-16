@@ -13,7 +13,7 @@ import { Helmet } from 'react-helmet-async';
 import clsx from 'clsx';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import { useEffect, useState, useMemo, useCallback } from 'react';
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 import { offersSelectors } from 'store/slices/offers';
 import Loader from 'components/loader';
 import { fetchAllOffers } from 'store/thunks/offers.ts';
@@ -23,7 +23,7 @@ const MainPage = () => {
   const dispatch = useAppDispatch();
 
   const [activeOfferId, setActiveOfferId] = useState<
-    OfferItemType['id'] | null
+    OfferItemModel['id'] | null
   >(null);
   const offers = useAppSelector(offersSelectors.offers);
   const offersStatus = useAppSelector(offersSelectors.status);
@@ -43,9 +43,12 @@ const MainPage = () => {
   const mainClassName =
     currentOffers.length === 0 ? 'page__main--index-empty' : '';
 
-  const handleCardHover = useCallback((offerId: OfferItemType['id'] | null) => {
-    setActiveOfferId(offerId);
-  }, []);
+  const handleCardHover = useCallback(
+    (offerId: OfferItemModel['id'] | null) => {
+      setActiveOfferId(offerId);
+    },
+    [],
+  );
 
   if (offersStatus === RequestStatus.Failed) {
     return <ServicePage type={ServicePageType.ServerUnavailable} />;

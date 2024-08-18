@@ -1,13 +1,13 @@
 import CartItem from 'components/offer-components/cart-item';
 import Sort from 'components/sort';
 import Map from 'components/map';
-import { OfferItemType } from 'types/offer-item';
+import { OfferItemModel } from 'types/offer-item';
 import { useAppSelector } from 'hooks/store';
 import { offersSelectors } from 'store/slices/offers';
 import useSortedOffers from 'hooks/use-sorted-offers';
 
 type MainFullProps = {
-  currentOffers: OfferItemType[];
+  currentOffers: OfferItemModel[];
   onCardHover?: (offerId: string | null) => void;
   activeOfferId: string | null;
 };

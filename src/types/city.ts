@@ -1,6 +1,6 @@
-import { LocationType } from './location';
+import { LocationModel } from './location';
 
-export type CityType = {
+export type CityModel = {
   name: string;
-  location: LocationType;
+  location: LocationModel;
 };

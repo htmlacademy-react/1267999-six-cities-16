@@ -1,10 +1,10 @@
-import { ReviewType } from 'types/review.ts';
+import { ReviewModel } from 'types/review.ts';
 import { getCurrentDate } from 'utils/function.ts';
 import RatingStars from 'components/rating-stars';
 import { ClassNamePages } from 'const/const.ts';
 
 type ReviewsInfoProps = {
-  review: ReviewType;
+  review: ReviewModel;
 };
 
 const ReviewsInfo = ({ review }: ReviewsInfoProps) => {

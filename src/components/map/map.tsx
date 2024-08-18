@@ -1,14 +1,14 @@
 import clsx from 'clsx';
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 import { useCallback, useEffect, useRef } from 'react';
 import leaflet, { LayerGroup } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import useMap from 'hooks/use-map';
 import { URL_MARKER_ACTIVE, URL_MARKER_DEFAULT } from './const.ts';
-import { OfferDetailType } from 'types/offer-detail.ts';
+import { OfferDetailModel } from 'types/offer-detail.ts';
 
 type MapProps = {
-  offers: (OfferItemType | OfferDetailType)[];
+  offers: (OfferItemModel | OfferDetailModel)[];
   activeOfferId: string | null;
   className: string;
 };

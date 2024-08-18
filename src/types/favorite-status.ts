@@ -1,4 +1,4 @@
 import { FavoriteStatus } from '../const/const.ts';
 
-export type FavoriteStatusType =
+export type FavoriteStatusModel =
   (typeof FavoriteStatus)[keyof typeof FavoriteStatus];

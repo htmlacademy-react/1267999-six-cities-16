@@ -1,13 +1,13 @@
-import { OfferDetailType } from 'types/offer-detail.ts';
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferDetailModel } from 'types/offer-detail.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 import { RequestStatus } from 'const/const.ts';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { fetchNearOffers, fetchOffer } from 'store/thunks/offers.ts';
 import { RootState } from 'types/store.ts';
 
 type TOfferState = {
-  info: OfferDetailType | null;
-  nearby: OfferItemType[];
+  info: OfferDetailModel | null;
+  nearby: OfferItemModel[];
   status: RequestStatus;
   nearByStatus: RequestStatus;
 };

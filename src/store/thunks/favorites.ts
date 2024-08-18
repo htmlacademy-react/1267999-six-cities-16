@@ -1,28 +1,28 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 import { AxiosInstance } from 'axios';
 import { EndPoint, ErrorToast, FavoriteStatusCode } from 'const/const.ts';
-import { FavoriteStatusType } from 'types/favorite-status.ts';
+import { FavoriteStatusModel } from 'types/favorite-status.ts';
 import { offersAction } from 'store/slices/offers.ts';
 import { toast } from 'react-toastify';
 
 type ChangeProps = {
   offerId: string;
-  status: FavoriteStatusType;
+  status: FavoriteStatusModel;
 };
 
 type ChangeResponse = {
-  offer: OfferItemType;
-  status: FavoriteStatusType;
+  offer: OfferItemModel;
+  status: FavoriteStatusModel;
 };
 
 const fetchFavorites = createAsyncThunk<
-  OfferItemType[],
+  OfferItemModel[],
   undefined,
   { extra: AxiosInstance }
 >('favorite/fetchAll', async (_arg, { extra: api }) => {
   try {
-    const response = await api.get<OfferItemType[]>(EndPoint.Favorite);
+    const response = await api.get<OfferItemModel[]>(EndPoint.Favorite);
 
     return response.data;
   } catch (error) {
@@ -37,7 +37,7 @@ const changeFavorite = createAsyncThunk<
   { extra: AxiosInstance }
 >('favorite/change', async ({ offerId, status }, { extra: api, dispatch }) => {
   try {
-    const response = await api.post<OfferItemType>(
+    const response = await api.post<OfferItemModel>(
       `${EndPoint.Favorite}/${offerId}/${status}`,
     );
 

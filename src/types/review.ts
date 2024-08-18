@@ -1,9 +1,9 @@
-import { UserType } from 'types/user.ts';
+import { UserModel } from 'types/user.ts';
 
-export type ReviewType = {
+export type ReviewModel = {
   id: string;
   date: Date;
-  user: UserType;
+  user: UserModel;
   comment: string;
   rating: number;
 };

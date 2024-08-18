@@ -1,10 +1,10 @@
 import { RequestStatus } from 'const/const.ts';
-import { ReviewType } from 'types/review.ts';
+import { ReviewModel } from 'types/review.ts';
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchComments, postComment } from 'store/thunks/comments.ts';
 
 type ReviewState = {
-  items: ReviewType[];
+  items: ReviewModel[];
   status: RequestStatus;
 };
 

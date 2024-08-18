@@ -4,10 +4,10 @@ import {
   TILE_LAYER_ATTRIBUTION,
   TILE_LAYER_URL_PATTERN,
 } from 'components/map/const.ts';
-import { LocationType } from 'types/location.ts';
+import { LocationModel } from 'types/location.ts';
 
 type UseMapProps = {
-  location: LocationType;
+  location: LocationModel;
   containerRef: React.RefObject<HTMLElement | null>;
 };
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 import { AppRoute, ClassNamePages } from 'const/const.ts';
 import OfferBadge from 'components/offer-components/offer-badge';
 import OfferBookmark from 'components/offer-components/offer-bookmark';
@@ -9,7 +9,7 @@ import { memo } from 'react';
 import { SizesCards } from 'components/offer-components/cart-item/const.ts';
 
 type CartItemProps = {
-  offer: OfferItemType;
+  offer: OfferItemModel;
   onCardHover?: (offerId: string | null) => void;
   typeCard: 'cities' | 'near-places' | 'favorites';
 };

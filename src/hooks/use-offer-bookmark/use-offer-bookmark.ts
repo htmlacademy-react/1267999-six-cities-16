@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from 'hooks/store';
 import { changeFavorite } from 'store/thunks/favorites.ts';
 import { AppRoute, AuthorizationStatus } from 'const/const.ts';
 import { userSelectors } from 'store/slices/user.ts';
-import { FavoriteStatusType } from 'types/favorite-status.ts';
+import { FavoriteStatusModel } from 'types/favorite-status.ts';
 
 export function useOfferBookmark(initialIsFavorite: boolean, offerId: string) {
   const dispatch = useAppDispatch();
@@ -21,7 +21,7 @@ export function useOfferBookmark(initialIsFavorite: boolean, offerId: string) {
     if (userStatus === AuthorizationStatus.Auth) {
       const newStatus = !isFavorite;
       setIsFavorite(newStatus);
-      const favoriteStatus: FavoriteStatusType = newStatus ? 1 : 0;
+      const favoriteStatus: FavoriteStatusModel = newStatus ? 1 : 0;
       dispatch(changeFavorite({ offerId, status: favoriteStatus }));
     } else {
       navigate(AppRoute.Login);

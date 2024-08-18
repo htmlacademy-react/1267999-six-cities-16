@@ -1,9 +1,9 @@
-import { CityNameType } from 'types/city-name.ts';
+import { CityNameModel } from 'types/city-name.ts';
 import { RequestStatus } from 'const/const.ts';
 
 type StatusMessageProps = {
   status: RequestStatus;
-  currentCity: CityNameType;
+  currentCity: CityNameModel;
 };
 
 const StatusMessage = ({ status, currentCity }: StatusMessageProps) => {

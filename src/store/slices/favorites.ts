@@ -1,10 +1,10 @@
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 import { FavoriteStatus, RequestStatus } from 'const/const.ts';
 import { createSlice } from '@reduxjs/toolkit';
 import { changeFavorite, fetchFavorites } from 'store/thunks/favorites.ts';
 
 type FavoritesState = {
-  items: OfferItemType[];
+  items: OfferItemModel[];
   status: RequestStatus;
 };
 

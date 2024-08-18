@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { UserType } from 'types/user.ts';
+import { UserModel } from 'types/user.ts';
 import { AxiosInstance } from 'axios';
 import { EndPoint, ErrorToast } from 'const/const.ts';
 import { dropToken, saveToken } from 'services/token.ts';
@@ -10,11 +10,11 @@ type LoginData = {
   password: string;
 };
 
-const checkAuth = createAsyncThunk<UserType, void, { extra: AxiosInstance }>(
+const checkAuth = createAsyncThunk<UserModel, void, { extra: AxiosInstance }>(
   'auth/checkAuth',
   async (_arg, { extra: api }) => {
     try {
-      const response = await api.get<UserType>(EndPoint.Login);
+      const response = await api.get<UserModel>(EndPoint.Login);
 
       return response.data;
     } catch (error) {
@@ -24,11 +24,11 @@ const checkAuth = createAsyncThunk<UserType, void, { extra: AxiosInstance }>(
   },
 );
 
-const login = createAsyncThunk<UserType, LoginData, { extra: AxiosInstance }>(
+const login = createAsyncThunk<UserModel, LoginData, { extra: AxiosInstance }>(
   'auth/login',
   async (body, { extra: api }) => {
     try {
-      const response = await api.post<UserType>(EndPoint.Login, body);
+      const response = await api.post<UserModel>(EndPoint.Login, body);
       saveToken(response.data.token);
       return response.data;
     } catch (error) {

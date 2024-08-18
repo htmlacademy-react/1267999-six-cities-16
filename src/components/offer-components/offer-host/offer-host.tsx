@@ -1,7 +1,7 @@
-import { UserType } from 'types/user.ts';
+import { UserModel } from 'types/user.ts';
 
 type OfferHostProps = {
-  host: UserType;
+  host: UserModel;
 };
 const OfferHost = ({ host }: OfferHostProps) => {
   return (

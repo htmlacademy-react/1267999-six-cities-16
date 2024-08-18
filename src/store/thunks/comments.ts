@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ReviewType } from 'types/review.ts';
-import { OfferDetailType } from 'types/offer-detail.ts';
+import { ReviewModel } from 'types/review.ts';
+import { OfferDetailModel } from 'types/offer-detail.ts';
 import { AxiosInstance } from 'axios';
 import { EndPoint, ErrorToast } from 'const/const.ts';
 import { toast } from 'react-toastify';
@@ -10,16 +10,16 @@ type PostCommentProps = {
     comment: string;
     rating: number;
   };
-  offerId: OfferDetailType['id'];
+  offerId: OfferDetailModel['id'];
 };
 
 const fetchComments = createAsyncThunk<
-  ReviewType[],
-  OfferDetailType['id'],
+  ReviewModel[],
+  OfferDetailModel['id'],
   { extra: AxiosInstance }
 >('comments/fetch', async (offerId, { extra: api }) => {
   try {
-    const response = await api.get<ReviewType[]>(
+    const response = await api.get<ReviewModel[]>(
       `${EndPoint.Comments}/${offerId}`,
     );
 
@@ -31,12 +31,12 @@ const fetchComments = createAsyncThunk<
 });
 
 const postComment = createAsyncThunk<
-  ReviewType,
+  ReviewModel,
   PostCommentProps,
   { extra: AxiosInstance }
 >('comments/post', async ({ body, offerId }, { extra: api }) => {
   try {
-    const response = await api.post<ReviewType>(
+    const response = await api.post<ReviewModel>(
       `${EndPoint.Comments}/${offerId}`,
       body,
     );

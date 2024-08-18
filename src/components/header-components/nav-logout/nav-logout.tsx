@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { AppRoute, LoadingStatuses } from 'const/const.ts';
-import { UserType } from 'types/user.ts';
+import { UserModel } from 'types/user.ts';
 import useNavLogout from 'hooks/use-nav-login';
 import Loader from 'components/loader';
 import { useAppSelector } from 'hooks/store';
 import { favoritesSelectors } from 'store/slices/favorites.ts';
 
 type NavLoginProps = {
-  info: UserType;
+  info: UserModel;
 };
 
 const NavLogout = ({ info }: NavLoginProps) => {

@@ -1,9 +1,9 @@
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 import CartItem from 'components/offer-components/cart-item';
 
 type FavoritesOffersProps = {
   city: string;
-  favoritesOffers: OfferItemType[];
+  favoritesOffers: OfferItemModel[];
 };
 
 const FavoritesOffers = ({ city, favoritesOffers }: FavoritesOffersProps) => {

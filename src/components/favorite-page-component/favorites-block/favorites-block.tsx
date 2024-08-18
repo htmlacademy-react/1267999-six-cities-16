@@ -1,9 +1,9 @@
 import FavoritesOffers from 'components/favorite-page-component/favorites-offers';
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 
 type FavoritesBlockProps = {
   favoriteOffersByCity: {
-    [key: string]: OfferItemType[];
+    [key: string]: OfferItemModel[];
   };
 };
 

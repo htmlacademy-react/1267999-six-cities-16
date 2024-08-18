@@ -1,8 +1,8 @@
 import Map from 'components/map';
-import { OfferDetailType } from 'types/offer-detail.ts';
-import { ReviewType } from 'types/review.ts';
+import { OfferDetailModel } from 'types/offer-detail.ts';
+import { ReviewModel } from 'types/review.ts';
 import ReviewsBlock from 'components/reviews-components/reviews-block';
-import { OfferItemType } from 'types/offer-item.ts';
+import { OfferItemModel } from 'types/offer-item.ts';
 import OfferGallery from 'components/offer-components/offer-gallery';
 import OfferBadge from 'components/offer-components/offer-badge';
 import OfferBookmark from 'components/offer-components/offer-bookmark';
@@ -14,9 +14,9 @@ import RatingStars from 'components/rating-stars';
 import { useMemo } from 'react';
 
 type TOfferDetailsProps = {
-  offer: OfferDetailType;
-  reviews: ReviewType[];
-  nearOffers: OfferItemType[];
+  offer: OfferDetailModel;
+  reviews: ReviewModel[];
+  nearOffers: OfferItemModel[];
 };
 
 const OfferDetails = ({ offer, reviews, nearOffers }: TOfferDetailsProps) => {
