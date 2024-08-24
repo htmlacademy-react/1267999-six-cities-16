@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
-import { AppRoute, LoadingStatuses } from 'const/const.ts';
+import { AppRoute } from 'const/const.ts';
 import { UserModel } from 'types/user.ts';
 import useNavLogout from 'hooks/use-nav-login';
-import Loader from 'components/loader';
-import { useAppSelector } from 'hooks/store';
-import { favoritesSelectors } from 'store/slices/favorites.ts';
 
 type NavLoginProps = {
   info: UserModel;
@@ -12,11 +9,6 @@ type NavLoginProps = {
 
 const NavLogout = ({ info }: NavLoginProps) => {
   const { favoriteCount, handleLogout } = useNavLogout();
-  const favoriteStatus = useAppSelector(favoritesSelectors.favoriteStatus);
-
-  if (LoadingStatuses.includes(favoriteStatus)) {
-    return <Loader />;
-  }
 
   return (
     <>

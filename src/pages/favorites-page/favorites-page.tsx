@@ -1,14 +1,13 @@
 import MainLayout from 'layouts/main-layout';
 import Header from 'components/header-components/header';
 import Footer from 'components/footer';
-import { ClassName, ClassNamePages, RequestStatus } from 'const/const.ts';
+import { ClassName, ClassNamePages } from 'const/const.ts';
 import { Helmet } from 'react-helmet-async';
 import FavoritesBlock from 'components/favorite-page-component/favorites-block';
 import { useAppDispatch, useAppSelector } from 'hooks/store';
 import clsx from 'clsx';
 import FavoritesEmpty from 'components/favorite-page-component/favorites-empty';
 import { favoritesSelectors } from 'store/slices/favorites.ts';
-import Loader from 'components/loader';
 import { groupOffersByCity } from 'utils/function.ts';
 import { useMemo, useEffect } from 'react';
 import { fetchFavorites } from 'store/thunks/favorites.ts';
@@ -16,7 +15,6 @@ import { fetchFavorites } from 'store/thunks/favorites.ts';
 const FavoritesPage = () => {
   const dispatch = useAppDispatch();
   const favoriteOffers = useAppSelector(favoritesSelectors.favorites);
-  const requestStatus = useAppSelector(favoritesSelectors.favoriteStatus);
 
   useEffect(() => {
     dispatch(fetchFavorites());
@@ -39,10 +37,6 @@ const FavoritesPage = () => {
   const classNameMainFavorites = hasFavorites
     ? ''
     : ClassNamePages.FavoritesEmpty;
-
-  if (requestStatus === RequestStatus.Loading) {
-    return <Loader />;
-  }
 
   return (
     <MainLayout header={<Header />} className={classNameLayoutFavorites}>
