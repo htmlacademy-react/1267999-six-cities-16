@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { AppRoute } from 'const/const.ts';
 import { UserModel } from 'types/user.ts';
 import useNavLogout from 'hooks/use-nav-login';
+import './nav-logout.css';
 
 type NavLoginProps = {
   info: UserModel;
@@ -26,9 +27,9 @@ const NavLogout = ({ info }: NavLoginProps) => {
         </Link>
       </li>
       <li className="header__nav-item">
-        <a className="header__nav-link" onClick={handleLogout}>
+        <button className="header__nav-link" onClick={handleLogout}>
           <span className="header__signout">Sign out</span>
-        </a>
+        </button>
       </li>
     </>
   );

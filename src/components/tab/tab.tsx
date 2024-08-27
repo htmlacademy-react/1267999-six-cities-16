@@ -3,6 +3,7 @@ import { useAppDispatch } from 'hooks/store';
 import { CityNameModel } from 'types/city-name.ts';
 import { offersAction } from 'store/slices/offers.ts';
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
 type TabProps = {
   city: CityNameModel;
@@ -24,9 +25,9 @@ const Tab = ({ city, currentCity }: TabProps) => {
       }}
       className="locations__item"
     >
-      <a className={clsx('locations__item-link', isActiveTab)} href="#">
+      <Link className={clsx('locations__item-link', isActiveTab)} to="#">
         <span>{city}</span>
-      </a>
+      </Link>
     </li>
   );
 };
